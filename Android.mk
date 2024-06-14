@@ -85,7 +85,7 @@ LOCAL_SRC_FILES := \
     src/GLES/vulkan/utils.cpp
     
 
-LOCAL_CFLAGS = -g -fexceptions -frtti -std=c++11 -Wall -D_GLIBCXX_USE_CXX11_ABI=0
+LOCAL_CFLAGS = -g -fexceptions -frtti -std=gnu2x -Wall -D_GLIBCXX_USE_CXX11_ABI=0
 LOCAL_CFLAGS += -Ofast
 LOCAL_CFLAGS += -DVK_USE_PLATFORM_ANDROID_KHR
 
@@ -98,7 +98,7 @@ LOCAL_SHARED_LIBRARIES += HLSL
 LOCAL_SHARED_LIBRARIES += glslang
 LOCAL_SHARED_LIBRARIES += SPIRV
 
-#LOCAL_CFLAGS += -DSHAREDLIB
+LOCAL_CFLAGS += -DSHAREDLIB
 include $(BUILD_SHARED_LIBRARY)
 
 include $(LOCAL_PATH)/glslang/Android.mk
