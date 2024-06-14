@@ -7,11 +7,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build VGPU
         run: |
-         # wget https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
-         # unzip android-ndk-r26d-linux.zip >> /dev/null
+         wget https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
+         unzip android-ndk-r26d-linux.zip >> /dev/null
          $ANDROID_NDK_LATEST_HOME/ndk-build APP_PLATFORM=android-29 APP_BUILD_SCRIPT=./Android.mk NDK_PROJECT_PATH=.
       - name: Upload VGPU libs
         uses: actions/upload-artifact@v4
         with:
+          if: always()
           name: vgpu
           path: obj/local/
