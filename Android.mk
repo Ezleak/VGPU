@@ -101,7 +101,7 @@ LOCAL_CFLAGS += -DNO_GBM
 #LOCAL_CFLAGS += -DNO_INIT_CONSTRUCTOR
 LOCAL_CFLAGS += -DDEFAULT_ES=3
 
-LOCAL_LDLIBS := -ldl -llog -landroid -lEGL -lGLES3
+LOCAL_LDLIBS := -ldl -llog -landroid -lEGL -lGLESv2 -lGLESv3
 #building as a shared lib
 
 LOCAL_CFLAGS += -DSHAREDLIB
