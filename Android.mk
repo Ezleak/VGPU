@@ -85,7 +85,7 @@ LOCAL_SRC_FILES := \
     src/GLES/vulkan/utils.cpp
     
 
-LOCAL_CFLAGS = -g -fexceptions -frtti -std=c++16 -Wall -D_GLIBCXX_USE_CXX11_ABI=0
+LOCAL_CFLAGS = -g -fexceptions -frtti -std=c++11 -Wall -D_GLIBCXX_USE_CXX11_ABI=0
 LOCAL_CFLAGS += -Ofast
 LOCAL_CFLAGS += -DVK_USE_PLATFORM_ANDROID_KHR
 
