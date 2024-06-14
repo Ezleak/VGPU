@@ -89,7 +89,7 @@ LOCAL_CFLAGS = -g -fexceptions -frtti -std=c++11 -Wall -D_GLIBCXX_USE_CXX11_ABI=
 LOCAL_CFLAGS += -O3
 LOCAL_CFLAGS += -DVK_USE_PLATFORM_ANDROID_KHR
 
-LOCAL_LDLIBS := -ldl -llog -lm
+LOCAL_LDLIBS := -ldl -llog -lm -landroid -lEGL -lGLESv3
 #building as a shared lib
 
 LOCAL_SHARED_LIBRARIES := OSDependent
