@@ -101,4 +101,4 @@ LOCAL_SHARED_LIBRARIES += glslang
 LOCAL_CFLAGS += -DSHAREDLIB
 include $(BUILD_SHARED_LIBRARY)
 
-#include $(LOCAL_PATH)/glslang/Android.mk
+include $(LOCAL_PATH)/glslang/Android.mk
