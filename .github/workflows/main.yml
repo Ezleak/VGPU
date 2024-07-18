@@ -8,11 +8,11 @@ jobs:
       - name: Build VGPU
         run: |
          git clone --depth 1 https://github.com/KhronosGroup/glslang
+         wget https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
+         unzip android-ndk-r26d-linux.zip >> /dev/null
          cd ..
          cp "./Android.mk" ./glslang/
          mv Android.mk1 Android.mk
-         wget https://dl.google.com/android/repository/android-ndk-r26d-linux.zip
-         unzip android-ndk-r26d-linux.zip >> /dev/null
          $ANDROID_NDK_LATEST_HOME/ndk-build APP_PLATFORM=android-29 APP_BUILD_SCRIPT=./Android.mk NDK_PROJECT_PATH=.
       - name: Upload VGPU libs
         uses: actions/upload-artifact@v4
