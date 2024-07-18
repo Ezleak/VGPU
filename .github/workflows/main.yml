@@ -2,17 +2,16 @@ name: Build vgpu
 on: [push, workflow_dispatch]
 jobs:
   build-android:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Build VGPU
         run: |
-         #wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
-         #unzip android-ndk-r25c-linux.zip >> /dev/null
-         $ANDROID_NDK_LATEST_HOME/ndk-build APP_PLATFORM=android-29 APP_BUILD_SCRIPT=./Android.mk NDK_PROJECT_PATH=.
+         wget https://dl.google.com/android/repository/android-ndk-r26b-linux.zip
+         unzip android-ndk-r26b-linux.zip >> /dev/null
+         $ANDROID_NDK_LATEST_HOME/ndk-build APP_PLATFORM=android-26 APP_BUILD_SCRIPT=./Android.mk NDK_PROJECT_PATH=.
       - name: Upload VGPU libs
         uses: actions/upload-artifact@v4
         with:
-          if: always(
           name: vgpu
           path: obj/local/
