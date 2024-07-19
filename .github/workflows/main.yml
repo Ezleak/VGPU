@@ -7,8 +7,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build VGPU
         run: |
-         mkdir ./glslang
-         cd ./glslang
+         cd ./
+         mkdir /glslang/
+         cd ./glslang/
          git clone --depth 1 https://github.com/KhronosGroup/glslang
          cd ..
          wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip
