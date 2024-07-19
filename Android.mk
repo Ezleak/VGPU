@@ -92,6 +92,10 @@ LOCAL_CFLAGS += -DVK_USE_PLATFORM_ANDROID_KHR
 LOCAL_LDLIBS := -ldl -llog -lm -landroid -lEGL -lvulkan
 #building as a shared lib
 
+include $(BUILD_SHARED_LIBRARY)
+
+include $(LOCAL_PATH)/glslang/Android.mk
+
 LOCAL_SHARED_LIBRARIES := OSDependent
 LOCAL_SHARED_LIBRARIES += OGLCompiler
 LOCAL_SHARED_LIBRARIES += HLSL
@@ -99,6 +103,3 @@ LOCAL_SHARED_LIBRARIES += glslang
 LOCAL_SHARED_LIBRARIES += SPIRV
 
 LOCAL_CFLAGS += -DSHAREDLIB
-include $(BUILD_SHARED_LIBRARY)
-
-include $(LOCAL_PATH)/glslang/Android.mk
